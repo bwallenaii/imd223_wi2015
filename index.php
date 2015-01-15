@@ -8,7 +8,7 @@
         <h1>Some PHP is below</h1>
         <p>Not here.</p>
         <p><?php 
-        echo "Here it is!</p>\r\n\t"."<p>Here is some more.";
+        echo "Here it was!</p>\r\n\t"."<p>Here is some more.";
         ?></p>
         
         <?php
