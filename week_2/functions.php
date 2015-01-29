@@ -76,6 +76,9 @@ function createLink2($href, $blank = true)
         <p>
         <?php echo createLink2("http://userfriendly.org", false); ?>
         </p>
+        <?php
+            echo date("m/d/Y H:i:s");
+        ?>
     </body>
 </html>
 
