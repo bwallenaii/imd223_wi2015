@@ -1,6 +1,6 @@
 <?php
-require_once("classes/user.php");
-$user = User::lockdown();
+require_once("autoload.php");
+$user = \DBObject\User::lockdown();
 ?><html>
     <head>
         <title>Sign Up/Login</title>

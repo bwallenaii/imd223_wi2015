@@ -1,5 +1,6 @@
 <?php
-require_once("pdatabase.php");
+namespace Database;
+
 class Table extends PDatabase
 {
     protected $tableName = "";
@@ -15,7 +16,7 @@ class Table extends PDatabase
     public function __construct($id = null)
     {
         parent::__construct();
-        $this->data = new StdClass();
+        $this->data = new \StdClass();
         $this->className = get_class($this);
         if(is_object($id))
         {
@@ -98,6 +99,12 @@ class Table extends PDatabase
         }
     }
     
+    public function loaded()
+    {
+        $tid = $this->tableId;
+        return !empty($this->data->$tid);
+    }
+    
     public static function startSession()
     {
         $sessId = session_id();
@@ -116,7 +123,7 @@ class Table extends PDatabase
         }
         if($this->verifyFields && !$this->hasField($key))
         {
-            throw new Exception("$key does not exist on table $this->tableName.");
+            throw new \Exception("$key does not exist on table $this->tableName.");
         }
         if(!empty($this->data->$key))
         {
@@ -138,7 +145,7 @@ class Table extends PDatabase
         }
         if($this->verifyFields && !$this->hasField($key))
         {
-            throw new Exception("$key does not exist on table $this->tableName.");
+            throw new \Exception("$key does not exist on table $this->tableName.");
             return;
         }
         $this->data->$key = $this->autoTrim && is_string($val) ? trim($val):$val;

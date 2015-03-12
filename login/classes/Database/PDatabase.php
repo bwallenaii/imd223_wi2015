@@ -1,5 +1,7 @@
 <?php
-
+namespace Database;
+use \PDO;
+use \PDOStatement;
 class PDatabase
 {
 	const HOST = "localhost";
@@ -153,7 +155,7 @@ class PDatabase
 	 * @description Builds and executes an insert statement
 	 * @author Brent Allen
 	 * @argument	table		String		The database table you insert into
-	 * @argument	data		StdClass	Name/value pairs for the fields to insert
+	 * @argument	data		\StdClass	Name/value pairs for the fields to insert
 	 * @return		Boolean		true on success, false otherwise.
 	*/
 	public function insert($table, $data)

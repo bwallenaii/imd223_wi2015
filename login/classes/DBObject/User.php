@@ -1,6 +1,7 @@
 <?php
-require_once("table.php");
-
+namespace DBObject;
+use \Database\Table as Table;
+use \Database\PDatabase as Pdatabase;
 class User extends Table
 {
     protected $tableName = "users";
